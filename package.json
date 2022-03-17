@@ -1,6 +1,6 @@
 {
   "name": "instagramdp",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A NPM Package To Download Instagram Profile Pictures",
   "main": "index.js",
   "scripts": {
@@ -22,6 +22,7 @@
   "homepage": "https://github.com/icancodebeauty/instadp#readme",
   "dependencies": {
     "cheerio": "^1.0.0-rc.10",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "urlencode": "^1.1.0"
   }
 }
