@@ -1,5 +1,6 @@
 const request = require("request");
 const cheerio = require("cheerio");
+var urlencode = require('urlencode');
 
 module.exports = (username) => {
     return new Promise(async (resolve, reject) => {
@@ -8,7 +9,12 @@ module.exports = (username) => {
                 if (response.statusCode == 200) {
                     const $ = cheerio.load(body);
                     $(".avatar").each(function () {
-                        resolve({ status: 200, picture: (($(this).children("img").first().attr("src").trim()).split("org/?"))[1] });
+                        let imageurl = $(this).children("img").first().attr("src").trim();
+                        if (imageurl.includes("imginn.org")) {
+                            resolve({ status: 200, picture: (imageurl.split("org/?"))[1] });
+                        } else if (imageurl.includes("pimg.tw")) {
+                            resolve({ status: 200, picture: urlencode.decode((imageurl.split("?url="))[1]) });
+                        }
                     });
                 } else {
                     resolve({ status: 404, picture: "Image Not Found!" });
