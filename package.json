@@ -1,0 +1,27 @@
+{
+  "name": "instagramdp",
+  "version": "1.0.1",
+  "description": "A NPM Package To Download Instagram Profile Pictures",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/icancodebeauty/instadp.git"
+  },
+  "keywords": [
+    "instagram",
+    "picture"
+  ],
+  "author": "Dedomil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/icancodebeauty/instadp/issues"
+  },
+  "homepage": "https://github.com/icancodebeauty/instadp#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.10",
+    "request": "^2.88.2"
+  }
+}
